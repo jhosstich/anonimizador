@@ -1,5 +1,5 @@
 import { Component } from '@angular/core';
-import { FormBuilder, FormGroup } from '@angular/forms';
+import { FormBuilder, FormControl, FormGroup, Validators } from '@angular/forms';
 
 @Component({
   selector: 'app-form',
@@ -9,7 +9,7 @@ import { FormBuilder, FormGroup } from '@angular/forms';
 export class FormComponent {
 
   public checkoutForm: FormGroup;
-
+  public selectedFile!: File;
   constructor(private formBuilder: FormBuilder){
     this.checkoutForm = this.formBuilder.group({
       name: '',
@@ -18,10 +18,14 @@ export class FormComponent {
       street:'',
       street_number:'',
       postal_code:'',
-      address: ''
+      address: '',
+      file: new FormControl(null, [Validators.required])
     });
+  }
 
-
+  onFileSelected(event: any) {
+    this.selectedFile = <File>event.target.files[0]
+    console.log(event)
   }
 
   onSubmit(customerData:any) {
