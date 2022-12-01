@@ -1,0 +1,19 @@
+mat-card{
+  width: 50%;
+}
+
+.form {
+  display: flex;
+  flex-direction: column;
+  margin:1rem auto;
+  max-width: 600px;
+}
+
+.mat-mdc-text-field-wrapper:not(.mdc-text-field--outlined) .mat-mdc-form-field-infix {
+  padding-top: 20px;
+  padding-bottom: 0;
+}
+
+.mat-mdc-form-field{
+  height: 72px;
+}
