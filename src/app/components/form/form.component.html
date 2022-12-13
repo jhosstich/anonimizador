@@ -30,10 +30,10 @@
         <input matInput  formControlName="postal_code" />
       </mat-form-field>
       <div class="select-file">
-        <mat-label (click)="fileInput.click()" > Selecciona documento PDF </mat-label>
-        <button type="button"  mat-raised-button (click)="fileInput.click()">Choose File</button>
-        <input natInput hidden  mat-raised-button (change)="onFileSelected($event)" #fileInput type="file" formControlName="file" >
+        <mat-label> Selecciona documento PDF </mat-label>
+        <input (change)="onFileSelected($event)"  type="file" formControlName="file" >
         <!--
+        <button type="button"  mat-raised-button (click)="fileInput.click()">Choose File</button>
         <input matInput type="file" (change)="onFileSelected($event)" formControlName="file" />
         -->
       </div>
